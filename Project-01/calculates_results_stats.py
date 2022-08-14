@@ -4,7 +4,7 @@
 #                                                                             
 # PROGRAMMER: Danial Amin
 # DATE CREATED: 13-08-2022                          
-# REVISED DATE: 13-08-2022
+# REVISED DATE: 14-08-2022
 # PURPOSE: Create a function calculates_results_stats that calculates the 
 #          statistics of the results of the programrun using the classifier's model 
 #          architecture to classify the images. This function will use the 
@@ -88,12 +88,12 @@ def calculates_results_stats(results_dic):
         # Pet Image Label is a Dog - counts number of dog images
         if results_dic[key][3] == 1:
             results_stats_dic['n_dogs_img'] += 1   
+            if results_dic[key][4] == 1:
+                results_stats_dic['n_correct_dogs'] += 1
         # Pet Image Label is NOT a Dog
         if results_dic[key][4] == 0 and results_dic[key][3] == 0:
             results_stats_dic['n_correct_notdogs'] += 1
         # counts number of correct dog classifications
-        if results_dic[key][4] == 1:
-                results_stats_dic['n_correct_dogs'] += 1
         # calculates number of total images
     results_stats_dic['n_images'] = len(results_dic)
 
@@ -104,10 +104,10 @@ def calculates_results_stats(results_dic):
     #calculate percentage match
     results_stats_dic['pct_match'] = (results_stats_dic['n_match']/results_stats_dic['n_images'])*100.0
     # Calculates % correct dogs
-    results_stats_dic['pct_correct_dogs'] = (results_stats_dic['n_correct_dogs']/results_stats_dic['n_images'])*100.0
+    results_stats_dic['pct_correct_dogs'] = (results_stats_dic['n_correct_dogs']/results_stats_dic['n_dogs_img'])*100.0
     
     # Calculates % correct breed of dog
-    results_stats_dic['pct_correct_breed'] = (results_stats_dic['n_correct_breed']/results_stats_dic['n_images'])*100.0
+    results_stats_dic['pct_correct_breed'] = (results_stats_dic['n_correct_breed']/results_stats_dic['n_dogs_img'])*100.0
 
     # Calculates % correct not-a-dog images
     # Uses conditional statement for when no 'not a dog' images were submitted 

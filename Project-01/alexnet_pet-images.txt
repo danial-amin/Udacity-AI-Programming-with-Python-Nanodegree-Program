@@ -310,7 +310,7 @@ PetLabelDog: 0  ClassLabelDog: 0
 
  ** Statistics from calculates_results_stats() function:
 N Images: 40  N Dog Images: 30  N NotDog Images: 10 
-Pct Corr dog:  75.0 Pct Corr NOTdog: 100.0  Pct Corr Breed:  60.0
+Pct Corr dog: 100.0 Pct Corr NOTdog: 100.0  Pct Corr Breed:  80.0
 
  ** Check Statistics - calculated from this function as a check:
 N Images: 40  N Dog Images: 30  N NotDog Images: 10 
@@ -325,8 +325,8 @@ N Not-Dog Images    :  10
 
 *** Percentage Summary Statistics for CNN Model Architecture ALEXNET ***
                      pct_match: 75.000000
-              pct_correct_dogs: 75.000000
-             pct_correct_breed: 60.000000
+              pct_correct_dogs: 100.000000
+             pct_correct_breed: 80.000000
            pct_correct_notdogs: 100.000000
 
 INCORRECT Dog Breed Assignment:
@@ -337,4 +337,4 @@ Real:             boston terrier   Classifier:                        basenji
 Real:           golden retriever   Classifier:                tibetan mastiff
 Real:           golden retriever   Classifier:           afghan hound, afghan
 
-** Total Elapsed Runtime: 0:0:3.13
+** Total Elapsed Runtime: 0:0:3.01
